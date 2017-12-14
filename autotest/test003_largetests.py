@@ -133,7 +133,8 @@ def dir_avail():
     if not avail:
         print('"{}" does not exist'.format(exdir))
         print('no need to run {}'.format(os.path.basename(__file__)))
-    
+    if os.getenv('TRAVIS'):
+        avail = False
     return avail
 
 def main():
